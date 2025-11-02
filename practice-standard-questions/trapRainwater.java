@@ -1,4 +1,4 @@
-import java.util.*;
+
 class trapRainwater {
     public static void calcLeftMax(int [] leftMax,int[] height){
         int max=0;

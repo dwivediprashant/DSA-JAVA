@@ -10,6 +10,7 @@ public class prodFun{
         System.out.print("Enter second num :");
         int num2=sc.nextInt();
         System.out.print(product(num1,num2)); 
+        sc.close();
     }
     
 }

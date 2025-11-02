@@ -11,6 +11,7 @@ public class Tiling {
         Scanner sc=new Scanner(System.in);
         int n=4;
         System.out.print(fillTiles(n));
+        sc.close();
     }
     
 }

@@ -13,6 +13,7 @@ public class DecreaseOrder {
         System.out.print("Enter a number : ");
         int n=sc.nextInt();
         print(n);
+        sc.close();
     }
     
 }

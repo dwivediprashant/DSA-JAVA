@@ -23,6 +23,7 @@ public class shortestPath {
         Scanner sc=new Scanner(System.in);
         String path="WNEENESENNN";
         System.out.println(getDisplacement(path));
+        sc.close();
     }
     
 }

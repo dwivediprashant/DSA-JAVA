@@ -18,6 +18,7 @@ public class primeNum {
                 if(!isPrime)
                 System.out.print(num +" is a prime number.");
         }
+        sc.close();
         
     }
     

@@ -18,6 +18,7 @@ public class pallindrome {
         System.out.print("Enter a number : ");
         int num=sc.nextInt();
         System.out.print(isPallinderome(num));
+        sc.close();
     }
     
 }

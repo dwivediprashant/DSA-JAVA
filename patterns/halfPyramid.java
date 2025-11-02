@@ -16,6 +16,7 @@ public class halfPyramid {
             }
             System.out.println();
         }
+        sc.close();
     }
     
 }

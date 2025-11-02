@@ -5,7 +5,9 @@ public class typeCast {
         float num=20.99999f;
         int num2=(int)num;
         System.out.print(num2);
+        sc.close();
        
     }
+    
     
 }

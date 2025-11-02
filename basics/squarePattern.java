@@ -9,6 +9,7 @@ public class squarePattern {
             }
             System.out.println();
         }
+        sc.close();
     }
     
 }

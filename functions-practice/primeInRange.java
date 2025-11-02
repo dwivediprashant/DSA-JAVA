@@ -24,6 +24,7 @@ public class primeInRange {
         System.out.print("Enter a range :");
         int rng=sc.nextInt();
         checkPrimeInRng(rng);
+        sc.close();
     }
     
 }

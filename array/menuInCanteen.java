@@ -13,7 +13,9 @@ public class menuInCanteen {
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter name of item : ");
         String choice=sc.nextLine();
+        sc.close();
         return choice;
+        
     }
     public static void serveItem(String menu[],String choice){
         for(int i=0;i<menu.length;i++){

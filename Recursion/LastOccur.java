@@ -15,6 +15,7 @@ public class LastOccur {
         int[]arr={5,5,5,5};
         int key=5;
         System.out.print(lastOccur(arr,key,0));
+        sc.close();
     }
     
 }

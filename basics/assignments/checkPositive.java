@@ -11,6 +11,7 @@ public class checkPositive{
         }else{
              System.out.print(num+ " is neither positve nor negative.");
         }
+        sc.close();
     }
     
 }

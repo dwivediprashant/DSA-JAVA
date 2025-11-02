@@ -15,6 +15,7 @@ public class pairInArr {
         Scanner sc=new Scanner(System.in);
         int[] arr={3,4,2,8,6,7};
         pair(arr);
+        sc.close();
     }
     
 }

@@ -18,6 +18,7 @@ public class Matrix {
             }
             System.out.println();
         }
+        sc.close();
     }
     
 }

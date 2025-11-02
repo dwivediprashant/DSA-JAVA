@@ -14,6 +14,7 @@ public class invertAndRotatedPyramid {
             }
             System.out.println();
         }
+        sc.close();
     }
     
 }

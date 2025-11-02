@@ -32,6 +32,7 @@ public class prefixSumForMaxSubArrSum {
         int[] prefixSum=getPrefixSum(arr);
         // System.out.print(prefixSum);
         maxSubArrSum(arr,prefixSum);
+        sc.close();
         
     }
     

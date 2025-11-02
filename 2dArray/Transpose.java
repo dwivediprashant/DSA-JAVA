@@ -39,6 +39,7 @@ public class Transpose {
         int[][]matrix={{1,2,3},{4,3,7},{7,4,-5}};
         // transpose(matrix);//O(n^2) space and O(n^2) time
         optimizeTranspose(matrix);//only for square matrix O(1) space O(n^2) time
+        sc.close();
     }
     
 }

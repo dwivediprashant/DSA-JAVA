@@ -20,6 +20,7 @@ public class RemoveDuplicates {
         String str = "appnnacollege";//op: apncoleg
         StringBuilder ans= removeDupli(str,new StringBuilder(""),new boolean[26],0);
         System.out.print("Removed dulpicates string : " + ans);
+        sc.close();
     }
     
 }

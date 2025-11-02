@@ -10,6 +10,7 @@ public class sumOfN {
             n--;
         }
         System.out.print(sum);
+        sc.close();
     }
     
 }

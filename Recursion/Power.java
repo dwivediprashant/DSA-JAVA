@@ -22,6 +22,7 @@ public class Power {
         int x=2;
         int n=2147483647;
         System.out.print(optimizePow(x,n));
+        sc.close();
     }
     
 }

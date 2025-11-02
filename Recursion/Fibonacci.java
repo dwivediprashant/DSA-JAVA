@@ -12,6 +12,7 @@ public class Fibonacci {
         System.out.print("Enter index : ");
         int n=sc.nextInt();
         System.out.print(fibonacci(n));
+        sc.close();
     }
     
 }

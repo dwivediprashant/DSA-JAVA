@@ -19,6 +19,7 @@ public class basic {
         System.out.print(fullName);
         System.out.println(fullName.length());//length method
         System.out.println(fullName.charAt(12));//charAt method
+        sc.close();
     }
     
 }

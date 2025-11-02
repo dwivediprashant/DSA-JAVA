@@ -18,6 +18,7 @@ public class funOverload {
         System.out.println(sum(5.5f,6)); 
         System.out.println(sum(4,6)); 
         System.out.print(sum(5,6,6)); 
+        sc.close();
     }
     
 }

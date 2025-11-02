@@ -15,6 +15,7 @@ public class largestOfThree {
                 System.out.print(num3+" is largest.");
             }
         }
+        sc.close();
     }
     
 }

@@ -28,6 +28,7 @@ public class DiagonalSum {
               {4,5,6},
               {7,8,9}};
         System.out.print(diagSum(mat)) ;
+        sc.close();
     }
     
 }

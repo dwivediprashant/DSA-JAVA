@@ -16,6 +16,7 @@ public class pallindrome {
         Scanner sc=new Scanner(System.in);
         String str="1022201";
         System.out.println(isPallindrome(str));
+        sc.close();
     }
     
 }

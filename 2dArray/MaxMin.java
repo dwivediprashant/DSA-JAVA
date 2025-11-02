@@ -20,6 +20,7 @@ public class MaxMin {
         Scanner sc=new Scanner(System.in);
         int[][] matrix={{4,5,3},{5,-9,7},{1,5,4}};
         maxMin(matrix);
+        sc.close();
     }
     
 }

@@ -17,6 +17,7 @@ public class binToDec {
         System.out.print("Enter binary value :");
         int bin=sc.nextInt();
         binToDecimal(bin);
+        sc.close();
     }
     
 }

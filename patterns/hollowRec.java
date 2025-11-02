@@ -15,6 +15,7 @@ public class hollowRec {
             }
             System.out.println();
         }
+        sc.close();
     }
     
 }

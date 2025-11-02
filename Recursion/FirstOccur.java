@@ -15,6 +15,7 @@ public class FirstOccur {
         int[] arr={8,5,6,7,3,12,4,5,45,3};
         int key=45;
         System.out.print(firstOccur(arr,key,0));
+        sc.close();
     }
     
 }

@@ -10,6 +10,7 @@ public class star {
             }
             System.out.println();
         }
+        sc.close();
     }
     
 }

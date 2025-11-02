@@ -11,6 +11,7 @@ public class inputs {
         int num= sc.nextInt();
         System.out.print("Squared value : ");
         System.out.print(num*num);
+        sc.close();
     }
     
 }

@@ -21,6 +21,7 @@ public class largestInArray {
         Scanner sc=new Scanner(System.in);
         int numbers[]={56,98,-7,-78,56};
         largestAndSmallest(numbers);
+        sc.close();
     }
     
 }

@@ -1,9 +1,8 @@
 import java.util.*;
 public class decToBin {
-    public static void decToBin(int dec){
+    public static void dec2Bin(int dec){
         int bin=0;
         int multiplyBy10=1;
-        int ans=1;
         int remainder;
         while(dec>0){
             remainder=dec%2;
@@ -19,7 +18,8 @@ public class decToBin {
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter decimal value :");
         int dec=sc.nextInt();
-        decToBin(dec);
+        dec2Bin(dec);
+        sc.close();
     }
     
 }

@@ -27,6 +27,7 @@ public class binomial {
         int r=sc.nextInt();
         int res=binoCoeff(n,r);
         System.out.print(n+ "C"+ r+" = "+res);
+        sc.close();
     }
     
 }

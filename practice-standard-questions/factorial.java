@@ -6,7 +6,6 @@ public class factorial {
         int num=sc.nextInt();
         if(num==1 || num==0){
             System.out.print("factorial of "+num+" is : 1");
-            return;
         }
         int fact=1;
         while(num>1){
@@ -14,6 +13,7 @@ public class factorial {
             num--;
         }
         System.out.print("factorial is "+ fact);
+        sc.close();
     }
     
 }

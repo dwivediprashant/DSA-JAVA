@@ -79,6 +79,7 @@ public class lexicographNfrequency {
         for(int i=0;i<sortWords.length;i++){
             System.out.print(sortWords[i]+"["+Math.abs(repeatedCharInEachString[i])+"] ");
         }
+        sc.close();
 
     }
     

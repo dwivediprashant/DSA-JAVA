@@ -32,6 +32,7 @@ public class searchInRotatedSortedArray {
         int target=2;
         int idx=search(nums,target);
         System.out.print(idx==-1? target +" not found ! " : target+ " found at index "+idx); 
+        sc.close();
     }
     
 }

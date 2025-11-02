@@ -10,6 +10,7 @@ public class avg {
         int avg=num1+num2+num3;
         avg=avg/3;
         System.out.print("Avrage : "+ avg);
+        sc.close();
     }
     
 }

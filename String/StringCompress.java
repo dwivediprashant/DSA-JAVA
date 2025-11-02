@@ -20,6 +20,8 @@ public class StringCompress {
         Scanner sc=new Scanner(System.in);
         String str="aabbfaaaccc";//a2b2fa3c3
         compress(str);
+        sc.close();
     }
+    
     
 }

@@ -16,6 +16,7 @@ public class primeFun {
         System.out.print("Enter a number :");
         int num=sc.nextInt();
         System.out.print(checkPrime(num));
+        sc.close();
     }
     
 }

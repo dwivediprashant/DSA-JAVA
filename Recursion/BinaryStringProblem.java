@@ -18,6 +18,7 @@ public class BinaryStringProblem {
         int n=3;
         StringBuilder sb = new StringBuilder("");
         printAllPossibleBinStr(n,sb);
+        sc.close();
     }
     
 }

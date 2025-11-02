@@ -1,6 +1,6 @@
 import java.util.*;
 public class binarySearch {
-    public static int binarySearch(int arr[],int key,int n){
+    public static int binSearch(int arr[],int key,int n){
         int left=0;
         int right=n-1;
         int mid= left+(right-left)/2;
@@ -23,12 +23,13 @@ public class binarySearch {
         int n=5;
         int arr[]={4,7,12,32,39};
         int key=11;
-        int idx=binarySearch(arr,key,n);
+        int idx=binSearch(arr,key,n);
         if(idx==-1){
             System.out.print(key+ " not found!");
         }else{
             System.out.print(key+ " found at index "+ idx);
         }
+        sc.close();
     }
     
 }

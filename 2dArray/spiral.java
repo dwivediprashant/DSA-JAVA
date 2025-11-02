@@ -31,6 +31,7 @@ public class spiral {
     {16, 17, 18, 19, 20}
 };
 printSpiral(matrix);
+sc.close();
     }
     
 }

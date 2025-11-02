@@ -5,9 +5,10 @@ public class typeConv {
         // int num=20;
         // float num2=num;
         // System.out.print(num2);
-        float num=20f;
-        int num2=num;
-        System.out.print(num2);//----------error type compatible lossy conversion
+        // float num=20f;
+        // int num2=num;//----------error type compatible lossy conversion
+        // System.out.print(num2);
+        sc.close();
     }
     
 }

@@ -13,6 +13,7 @@ public class IsSortedArr {
         Scanner sc=new Scanner(System.in);
         int[]arr={7,8,8,8,8};
         System.out.print(isSorted(arr,0));
+        sc.close();
     }
     
 }

@@ -16,6 +16,7 @@ public class callByVal {
         swap(a,b);
         System.out.println("a= "+ a);
         System.out.print("b= "+ b);
+        sc.close();
     }
     
 }

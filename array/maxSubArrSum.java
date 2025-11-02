@@ -1,7 +1,6 @@
 import java.util.*;
 public class maxSubArrSum {
     public static void maxMinSubArr(int [ ] arr){
-        int ts=0;
         int sumSubArr=0;
         int maxSubArrSum=arr[0];
         int minSubArrSum=arr[0];
@@ -35,6 +34,7 @@ public class maxSubArrSum {
         Scanner sc=new Scanner(System.in);
         int[] arr={-17,10,-45,34,21,12};
         maxMinSubArr(arr);
+        sc.close();
     }
     
 }

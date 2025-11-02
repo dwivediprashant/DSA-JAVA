@@ -13,6 +13,7 @@ public class Factorial {
         System.out.print("Enter a number : ");
         int n=sc.nextInt();
         System.out.print("Factorial : "+fact(n));
+        sc.close();
     }
     
 }

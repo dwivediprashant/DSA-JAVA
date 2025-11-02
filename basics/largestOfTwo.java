@@ -10,6 +10,7 @@ public class largestOfTwo {
         }else{
             System.out.print(num2 + " is larger .");
         }
+        sc.close();
     }
     
 }

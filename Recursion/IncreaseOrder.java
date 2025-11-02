@@ -15,6 +15,7 @@ public class IncreaseOrder {
         System.out.print("Enter end number : ");
         int n=sc.nextInt();
         print(st,n);
+        sc.close();
     }
     
 }

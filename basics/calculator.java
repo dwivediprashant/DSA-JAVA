@@ -36,7 +36,7 @@ public class calculator {
             q=sc.nextInt();
             
         }
-            
+          sc.close();  
     }
     
 }

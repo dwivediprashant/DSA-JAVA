@@ -16,6 +16,7 @@ public class factFun {
         System.out.print("Enter a number : ");
         int num=sc.nextInt();
         System.out.print( "factorial  = "+fact(num));
+        sc.close();
     }
     
 }

@@ -13,6 +13,7 @@ public class NSum {
         System.out.print("Enter limit : ");
         int n=sc.nextInt();
         System.out.print("Sum = "+SumOfN(n));
+        sc.close();
     }
     
 }

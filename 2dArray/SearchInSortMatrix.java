@@ -44,6 +44,7 @@ public class SearchInSortMatrix {
         int key=6;
         staircaseSearch(matrix,key);//O(row+col)
         binarySearch(matrix,9);//O(nlogn)
+        sc.close();
     }
     
 }

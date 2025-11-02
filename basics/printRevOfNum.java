@@ -10,6 +10,7 @@ public class printRevOfNum {
             System.out.print(num%10);
             num/=10;
         }
+        sc.close();
     }
     
 }

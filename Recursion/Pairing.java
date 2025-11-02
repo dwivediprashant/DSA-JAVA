@@ -19,6 +19,7 @@ public class Pairing {
         Scanner sc=new Scanner(System.in);
         int n=5;
         System.out.print(pairFriendsWays(n));
+        sc.close();
     }
     
 }

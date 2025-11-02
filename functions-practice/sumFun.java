@@ -10,6 +10,7 @@ public class sumFun {
         int num2=sc.nextInt();
         int sum=calcSum(num1,num2);//arguments or actual parameters
         System.out.print("Sum : "+sum);
+        sc.close();
     }
     
 }

@@ -40,6 +40,7 @@ public class Convert {
         StringBuilder res=new StringBuilder("");
         intToEnglish(num,res);
         System.out.print(res.toString());
+        sc.close();
     }
     
 }

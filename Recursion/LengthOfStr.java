@@ -10,6 +10,7 @@ public class LengthOfStr {
         Scanner sc=new Scanner(System.in);
         String str="Prashant kumar dwivedi";
         System.out.print(getLength(str));
+        sc.close();
     }
     
 }

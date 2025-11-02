@@ -16,6 +16,7 @@ public class operators {
         int d=34;
         System.out.println(--d);//first use then inceremnt
         System.out.println(d);
+        sc.close();
     }
     
 }

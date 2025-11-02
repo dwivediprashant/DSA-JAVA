@@ -14,6 +14,7 @@ public class typePromote {//type promotion occur in only EXPRESSIONS a+b, a-b*c 
         // float result=lg+db+f;
         double result=lg+db+f;
         System.out.print(result);
+        sc.close();
 
     }
     

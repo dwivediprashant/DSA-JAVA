@@ -17,6 +17,7 @@ public class switchSt {
             default:
                 System.out.print("choice is unknown");
         }
+        sc.close();
     }
     
 }

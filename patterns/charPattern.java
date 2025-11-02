@@ -15,6 +15,7 @@ public class charPattern {
             }
             System.out.println();
         }
+        sc.close();
     }
     
 }

@@ -1,6 +1,6 @@
 import java.util.*;
 public class subArr {
-    public static void subArr(int [ ] arr){
+    public static void sbArr(int [ ] arr){
         int ts=0;
         int sumSubArr=0;
         for(int start=0;start<arr.length;start++){
@@ -24,7 +24,8 @@ public class subArr {
     public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
         int[] arr={1,2,3,4,5};
-        subArr(arr);
+        sbArr(arr);
+        sc.close();
     }
     
 }
