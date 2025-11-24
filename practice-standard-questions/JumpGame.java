@@ -44,7 +44,7 @@ public class JumpGame {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter number of elements: ");
-        int n = sc.nextInt();
+        int n = sc.nextInt(); 
 
         int[] nums = new int[n];
         System.out.println("Enter the elements of the array:");
