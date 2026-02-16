@@ -1,4 +1,4 @@
-package backtracking;
+
 import java.util.Scanner;
 public class Permutations {
     public static void getPermutations(StringBuilder str, String ans,int currIdx){
