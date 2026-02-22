@@ -129,6 +129,47 @@ public class LinkedList{
         size--;
         return val;
     }
+    //reverse O(n square)
+    void reverse(){
+        if(head==null){
+            System.out.println("Empty list");
+            return;
+        }
+        for(int i=0;i<size-1;i++){
+            Node temp=head;
+            //swap
+            for(int j=0;j<size-1-i;j++){
+                int temp2=temp.data;
+                temp.data=temp.next.data;
+                temp.next.data=temp2;
+                temp=temp.next;
+            }
+        }
+    }
+    //optimized using 3 pointers O(n)
+    void optimumReverse(){
+        if(size==0){
+            System.out.println("Empty list ");
+            return;
+        }
+        if(size==1){
+            return;
+        }
+        //initial condition
+        Node prev=null;
+        Node curr=head;
+        Node after=curr.next;
+        //move pointers
+        while(curr.next!=null){
+            curr.next=prev;
+            prev=curr;
+            curr=after;
+            after=after.next;
+        }
+        curr.next=prev;
+        prev=curr;
+        head=prev;
+    }
     //Print linked list
     void printLinkedList(){
         Node temp=head;
@@ -166,6 +207,16 @@ public class LinkedList{
         ll.addAtBegin(41);
         ll.printLinkedList();
         System.out.println(ll.removeAtGivenPos(2));
+        ll.addAtPosition(2, 101);
+        ll.addAtBegin(51);
+        ll.printLinkedList();
+        ll.reverse();
+        ll.printLinkedList();
+        ll.reverse();
+        ll.printLinkedList();
+        ll.optimumReverse();
+        ll.printLinkedList();
+        ll.optimumReverse();
         ll.printLinkedList();
     }
 }
