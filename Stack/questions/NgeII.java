@@ -5,39 +5,40 @@ import java.util.Stack;
 public class NgeII {
     static Stack<Integer> s = new Stack<>();
 
-    public static int getNgeOfLast(int[] nums, int lastEle) {
-        int n = nums.length;
-        for (int i = 0; i < n; i++) {
-            if (nums[i] > lastEle) {
-                return nums[i];
-            }
-        }
-        return -1;
-    }
+    // public static int getNgeOfLast(int[] nums, int lastEle) {
+    // int n = nums.length;
+    // for (int i = 0; i < n; i++) {
+    // if (nums[i] > lastEle) {
+    // return nums[i];
+    // }
+    // }
+    // return -1;
+    // }
 
     public static int[] getCircularNge(int[] nums) {
         int n = nums.length;
         int[] nge = new int[n];
-        int ngeLast = getNgeOfLast(nums, nums[n - 1]);
+        // int ngeLast = getNgeOfLast(nums, nums[n - 1]);
 
-        if (ngeLast != -1) {
-            s.push(ngeLast);
-        } else {
-            s.push(nums[n - 1]);
-        }
+        // if (ngeLast != -1) {
+        // s.push(ngeLast);
+        // } else {
+        // s.push(nums[n - 1]);
+        // }
 
-        nge[n - 1] = ngeLast;
+        // nge[n - 1] = ngeLast;
 
-        for (int i = n - 2; i >= 0; i--) {
-            while (!s.isEmpty() && s.peek() <= nums[i]) {
+        for (int i = 2 * n - 1; i >= 0; i--) {
+            int idx = i % n;
+            while (!s.isEmpty() && nums[s.peek()] <= nums[idx]) {
                 s.pop();
             }
             if (s.isEmpty()) {
-                nge[i] = -1;
+                nge[idx] = -1;
             } else {
-                nge[i] = s.peek();
+                nge[idx] = nums[s.peek()];
             }
-            s.push(nums[i]);
+            s.push(idx);
         }
 
         return nge;
