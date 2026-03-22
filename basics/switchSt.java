@@ -1,10 +1,11 @@
 import java.util.*;
-public class switchSt {
-    public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
-        int choice=sc.nextInt();
 
-        switch(choice){
+public class SwitchSt {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int choice = sc.nextInt();
+
+        switch (choice) {
             case 1:
                 System.out.print("choice 1");
                 break;
@@ -19,5 +20,5 @@ public class switchSt {
         }
         sc.close();
     }
-    
+
 }

@@ -1,12 +1,13 @@
 import java.util.*;
-public class areaSquare {
-    public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
+
+public class AreaSquare {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
         System.out.print("Enter side of of square : ");
-        int side=sc.nextInt();
-        int area=side*side;
+        int side = sc.nextInt();
+        int area = side * side;
         System.out.print(area);
         sc.close();
     }
-    
+
 }

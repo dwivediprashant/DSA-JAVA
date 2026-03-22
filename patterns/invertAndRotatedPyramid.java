@@ -1,14 +1,15 @@
 import java.util.*;
-public class invertAndRotatedPyramid {
-    public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
+
+public class InvertAndRotatedPyramid {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
         System.out.print("Enter number of rows : ");
-        int row=sc.nextInt();
-        for(int i=0;i<row;i++){
-            for(int j=0;j<row;j++){
-                if(i+j>=row-1){
+        int row = sc.nextInt();
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < row; j++) {
+                if (i + j >= row - 1) {
                     System.out.print(" * ");
-                }else{
+                } else {
                     System.out.print("   ");
                 }
             }
@@ -16,5 +17,5 @@ public class invertAndRotatedPyramid {
         }
         sc.close();
     }
-    
+
 }

@@ -1,22 +1,24 @@
 import java.util.*;
-public class primeFun {
-    public static boolean checkPrime(int num){
-        if(num==2 ){
+
+public class PrimeFun {
+    public static boolean checkPrime(int num) {
+        if (num == 2) {
             return true;
         }
-        for(int i=2;i<=Math.sqrt(num);i++){
-            if(num%i==0){
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
                 return false;
             }
         }
         return true;
     }
-    public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number :");
-        int num=sc.nextInt();
+        int num = sc.nextInt();
         System.out.print(checkPrime(num));
         sc.close();
     }
-    
+
 }

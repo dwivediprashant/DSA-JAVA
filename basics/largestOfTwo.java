@@ -1,16 +1,17 @@
 import java.util.*;
-public class largestOfTwo {
-    public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
+
+public class LargestOfTwo {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
         System.out.print("Enter two numbbers : ");
-        int num1=sc.nextInt();
-        int num2=sc.nextInt();
-        if(num1>num2){
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        if (num1 > num2) {
             System.out.print(num1 + " is larger .");
-        }else{
+        } else {
             System.out.print(num2 + " is larger .");
         }
         sc.close();
     }
-    
+
 }
