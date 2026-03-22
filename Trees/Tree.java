@@ -1,5 +1,9 @@
 package Trees;
 
+import java.util.ArrayDeque;
+import java.util.LinkedList;
+import java.util.Queue;
+
 //binary tree from preorder
 public class Tree {
 
@@ -66,6 +70,40 @@ public class Tree {
             System.out.print(node.data + " ");
             inorderTraverse(node.right);
         }
+
+        // level order traversal : BFS (Breadth first search)
+
+        void levelorderTraverse(Node node) {
+            // empty
+            if (node == null) {
+                return;
+            }
+
+            Queue<Node> q = new LinkedList<>();
+            // initial root node(start)
+            q.add(node);
+            q.add(null);// for next line
+
+            while (!q.isEmpty()) {
+                Node currNode = q.remove();
+                if (currNode == null) {
+                    System.out.println();
+                    if (!q.isEmpty()) {
+                        q.add(null);
+                    } else {
+                        break;// q become empty
+                    }
+                } else {
+                    System.out.print(currNode.data + " ");
+                    if (currNode.left != null) {
+                        q.add(currNode.left);
+                    }
+                    if (currNode.right != null) {
+                        q.add(currNode.right);
+                    }
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -78,6 +116,7 @@ public class Tree {
         bt.postorderTraverse(node);
         System.out.println();
         bt.inorderTraverse(node);
-
+        System.out.println();
+        bt.levelorderTraverse(node);
     }
 }
