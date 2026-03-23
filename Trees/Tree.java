@@ -1,6 +1,5 @@
 package Trees;
 
-import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -23,6 +22,7 @@ public class Tree {
 
     static class BinaryTree {
         static int idx = -1;
+        static int height = 0;
 
         Node buildTree(int[] preorder) {
             ++idx;
@@ -83,13 +83,14 @@ public class Tree {
             // initial root node(start)
             q.add(node);
             q.add(null);// for next line
-
+            ++height;// root node counted
             while (!q.isEmpty()) {
                 Node currNode = q.remove();
                 if (currNode == null) {
                     System.out.println();
                     if (!q.isEmpty()) {
                         q.add(null);
+                        ++height;
                     } else {
                         break;// q become empty
                     }
@@ -103,7 +104,22 @@ public class Tree {
                     }
                 }
             }
+            System.out.println("height of tree is : " + height);
         }
+
+        // calculate height
+        int getHeight(Node root) {
+
+            if (root == null) {
+                return 0;
+            }
+
+            int leftH = getHeight(root.left);
+            int rightH = getHeight(root.right);
+
+            return 1 + Math.max(leftH, rightH);
+        }
+
     }
 
     public static void main(String[] args) {
@@ -118,5 +134,7 @@ public class Tree {
         bt.inorderTraverse(node);
         System.out.println();
         bt.levelorderTraverse(node);
+
+        System.out.println("Height by getHeight method : " + bt.getHeight(node));
     }
 }
