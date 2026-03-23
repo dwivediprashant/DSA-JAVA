@@ -120,6 +120,23 @@ public class Tree {
             return 1 + Math.max(leftH, rightH);
         }
 
+        // count no of node
+        int countNodes(Node root) {
+            if (root == null) {
+                return 0;
+            }
+            return 1 + countNodes(root.left) + countNodes(root.right);
+        }
+
+        // sum of nodes values
+
+        int nodeSum(Node root) {
+            if (root == null) {
+                return 0;
+            }
+            return root.data + nodeSum(root.left) + nodeSum(root.right);
+        }
+
     }
 
     public static void main(String[] args) {
@@ -136,5 +153,7 @@ public class Tree {
         bt.levelorderTraverse(node);
 
         System.out.println("Height by getHeight method : " + bt.getHeight(node));
+        System.out.println("number of nodes in tree : " + bt.countNodes(node));
+        System.out.println("Sum of nodes val in tree is : " + bt.nodeSum(node));
     }
 }
