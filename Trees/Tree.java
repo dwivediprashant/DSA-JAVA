@@ -137,6 +137,26 @@ public class Tree {
             return root.data + nodeSum(root.left) + nodeSum(root.right);
         }
 
+        // diameter of tree
+
+        int getDiameter(Node root) {
+            if (root == null) {
+                return 0;
+            }
+
+            // subtree diameter
+            int ld = getDiameter(root.left);
+            int lh = getHeight(root.left);
+            int rd = getDiameter(root.right);
+            int rh = getHeight(root.right);
+
+            int selfDiam = lh + rh + 1;
+
+            int maxD = Math.max(ld, rd);
+
+            return Math.max(selfDiam, maxD);
+        }
+
     }
 
     public static void main(String[] args) {
@@ -155,5 +175,6 @@ public class Tree {
         System.out.println("Height by getHeight method : " + bt.getHeight(node));
         System.out.println("number of nodes in tree : " + bt.countNodes(node));
         System.out.println("Sum of nodes val in tree is : " + bt.nodeSum(node));
+        System.out.println("Diameter of tree : " + bt.getDiameter(node));
     }
 }
