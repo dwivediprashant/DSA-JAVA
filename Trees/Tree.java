@@ -189,6 +189,19 @@ public class Tree {
             }
         }
 
+        void printAllNodesAtKthLevel(Node head, int k, int currLevel) {
+            if (head == null) {
+                // System.out.println(k + " th level does not exists.");
+                return;
+            }
+            if (currLevel == k) {
+                System.out.println(head.data + " ");
+                return;
+            }
+            printAllNodesAtKthLevel(head.left, k, currLevel + 1);
+            printAllNodesAtKthLevel(head.right, k, currLevel + 1);
+        }
+
     }
 
     public static void main(String[] args) {
@@ -277,5 +290,19 @@ public class Tree {
         } else {
             System.out.println("Subtree not exists in tree");
         }
+
+        // new tree
+
+        Node head = new Node(1);
+        head.left = new Node(2);
+        head.right = new Node(3);
+        head.left.left = new Node(4);
+        head.left.right = new Node(5);
+        head.right.left = new Node(6);
+        head.right.right = new Node(7);
+
+        int k = 3; // kth level;
+
+        bt.printAllNodesAtKthLevel(head, k, 1);
     }
 }
