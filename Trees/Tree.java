@@ -157,6 +157,38 @@ public class Tree {
             return Math.max(selfDiam, maxD);
         }
 
+        boolean isExists(Node headTree, Node headSubTree) {
+
+            if (headTree == null) {
+                return false;// doesn't matter
+            }
+
+            if (headTree.data != headSubTree.data) {
+                return isExists(headTree.left, headSubTree) || isExists(headTree.right, headSubTree);
+
+            }
+
+            return checkTree(headTree, headSubTree);
+        }
+
+        boolean checkTree(Node headTree, Node headSubTree) {
+            if (headTree == null && headSubTree == null) {
+                return true;
+            }
+            if (headTree == null && headSubTree != null) {
+                return false;
+            }
+            if (headTree != null && headSubTree == null) {
+                return false;
+            }
+
+            if (headTree.data == headSubTree.data) {
+                return checkTree(headTree.left, headSubTree.left) && checkTree(headTree.right, headSubTree.right);
+            } else {
+                return false;
+            }
+        }
+
     }
 
     public static void main(String[] args) {
@@ -176,5 +208,74 @@ public class Tree {
         System.out.println("number of nodes in tree : " + bt.countNodes(node));
         System.out.println("Sum of nodes val in tree is : " + bt.nodeSum(node));
         System.out.println("Diameter of tree : " + bt.getDiameter(node));
+
+        // make one tree and one subtree
+        // tree
+
+        Node headTree = new Node(1);
+        headTree.left = new Node(2);
+        headTree.right = new Node(3);
+        headTree.left.left = new Node(4);
+        headTree.left.right = new Node(5);
+        headTree.right.left = new Node(6);
+        headTree.right.right = new Node(7);
+        headTree.right.right.left = new Node(8);
+        headTree.right.right.right = new Node(9);
+        headTree.right.right.left.left = new Node(10);
+        headTree.right.right.right.right = new Node(11);
+
+        // subtrees
+
+        // testcase 0 : true
+
+        Node headSubTree = new Node(1);
+        headSubTree.left = new Node(2);
+        headSubTree.right = new Node(3);
+        headSubTree.left.left = new Node(4);
+        headSubTree.left.right = new Node(5);
+        headSubTree.right.left = new Node(6);
+        headSubTree.right.right = new Node(7);
+        headSubTree.right.right.left = new Node(8);
+        headSubTree.right.right.right = new Node(9);
+        headSubTree.right.right.left.left = new Node(10);
+        headSubTree.right.right.right.right = new Node(11);
+
+        // testcase 1: false
+        // Node headSubTree = new Node(1);
+        // headSubTree.right = new Node(3);
+        // headSubTree.right.left = new Node(6);
+        // headSubTree.right.right = new Node(7);
+
+        // testcase 2: false
+        // Node headSubTree = new Node(1);
+        // headSubTree.left = new Node(2);
+        // headSubTree.right = new Node(3);
+        // headSubTree.left.left = new Node(4);
+        // headSubTree.left.right = new Node(5);
+        // headSubTree.right.left = new Node(6);
+        // headSubTree.right.right = new Node(7);
+
+        // testcase 3: true
+        // Node headSubTree = new Node(7);
+        // headSubTree.left = new Node(8);
+        // headSubTree.right = new Node(9);
+        // headSubTree.left.left = new Node(10);
+        // headSubTree.right.right = new Node(11);
+
+        // testcase 4 : subtree head is not present
+        // Node headSubTree = new Node(100);
+
+        // testcase 5 : single node : true
+        // Node headSubTree = new Node(11);
+
+        // testcase 6 : single node :false
+        // Node headSubTree = new Node(1);
+
+        boolean isSubtreeExists = bt.isExists(headTree, headSubTree);
+        if (isSubtreeExists) {
+            System.out.println("Subtree exists in tree");
+        } else {
+            System.out.println("Subtree not exists in tree");
+        }
     }
 }
