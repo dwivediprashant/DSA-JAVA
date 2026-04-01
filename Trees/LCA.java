@@ -80,6 +80,25 @@ public class LCA {
 
     }
 
+    public static Node getLCA(Node head, int n1, int n2) {
+
+        if (head == null || head.data == n1 || head.data == n2) {
+            return head;
+        }
+
+        Node leftLca = getLCA(head.left, n1, n2);
+        Node rightLca = getLCA(head.right, n1, n2);
+
+        if (leftLca == null) {
+            return rightLca;
+        } else if (rightLca == null) {
+            return leftLca;
+        }
+
+        return head;
+
+    }
+
     public static void main(String[] args) {
         // BinaryTree bt = new BinaryTree();
         Node head = new Node(1);
@@ -101,7 +120,8 @@ public class LCA {
         head.right.right.left = new Node(14);
         head.right.right.right = new Node(15);
 
-        System.out.println("Lowest commom ancestor : " + getLowestCommonAncestor(head, 5, 6));
+        System.out.println("Approach1 : Lowest commom ancestor : " + getLowestCommonAncestor(head, 11, 9));
+        System.out.println("Approach2 : Lowest common ancestor : " + getLCA(head, 9, 11).data);
 
     }
 }
