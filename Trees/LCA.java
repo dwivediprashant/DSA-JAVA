@@ -99,6 +99,26 @@ public class LCA {
 
     }
 
+    public static int getDistfromLca(Node lca, int n, int dist) {
+        if (lca == null) {
+            return 0;// indicates node not exists
+        }
+        if (lca.data == n) {
+            return dist;
+        }
+        return getDistfromLca(lca.left, n, dist + 1) + getDistfromLca(lca.right, n, dist + 1);
+
+    }
+
+    public static int getMinDist(Node head, int n1, int n2) {
+        Node lca = getLCA(head, n1, n2);
+
+        int n1Dist = getDistfromLca(lca, n1, 0);// in terms of edges
+        int n2Dist = getDistfromLca(lca, n2, 0);// in terms of edges
+
+        return n1Dist + n2Dist;
+    }
+
     public static void main(String[] args) {
         // BinaryTree bt = new BinaryTree();
         Node head = new Node(1);
@@ -122,6 +142,11 @@ public class LCA {
 
         System.out.println("Approach1 : Lowest commom ancestor : " + getLowestCommonAncestor(head, 11, 9));
         System.out.println("Approach2 : Lowest common ancestor : " + getLCA(head, 9, 11).data);
-
+        int minDist = getMinDist(head, 15, 10);
+        if (minDist == 0) {
+            System.out.println("Given nodes are invalid or of same values.");
+        } else {
+            System.out.println("Minimum distance between nodes is  : " + minDist);
+        }
     }
 }
