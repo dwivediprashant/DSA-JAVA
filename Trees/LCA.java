@@ -119,6 +119,37 @@ public class LCA {
         return n1Dist + n2Dist;
     }
 
+    public static boolean getAllAncestor(Node head, int n, ArrayList<Integer> allAncestors) {
+        if (head == null) {
+            return false;
+        }
+        if (head.data == n) {
+            // allAncestors.add(head.data);
+            return true;
+        }
+        boolean leftRes = getAllAncestor(head.left, n, allAncestors);
+        boolean rightRes = getAllAncestor(head.right, n, allAncestors);
+        if (leftRes || rightRes) {
+            allAncestors.add(head.data);
+            return true;
+        }
+        return false;
+    }
+
+    public static int getKthAncestor(Node head, int n, int k) {
+        if (k <= 0 || k >= n) {
+
+            return -1;
+        }
+        ArrayList<Integer> allAncestors = new ArrayList<>();
+
+        getAllAncestor(head, n, allAncestors);
+
+        // System.out.println(allAncestors);
+
+        return allAncestors.get(k - 1);
+    }
+
     public static void main(String[] args) {
         // BinaryTree bt = new BinaryTree();
         Node head = new Node(1);
@@ -147,6 +178,12 @@ public class LCA {
             System.out.println("Given nodes are invalid or of same values.");
         } else {
             System.out.println("Minimum distance between nodes is  : " + minDist);
+        }
+        int kAncestor = getKthAncestor(head, 2, 1);
+        if (kAncestor == -1) {
+            System.out.print("Invalid value of k . It should be greater than 0 and less than n.");
+        } else {
+            System.out.println("Kth ancestor is : " + kAncestor);
         }
     }
 }
