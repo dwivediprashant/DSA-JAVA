@@ -26,6 +26,20 @@ public class BST {
 
     }
 
+    public static boolean searchVal(Node root, int key) {
+        if (root == null) {
+            return false;
+        }
+        if (key == root.data) {
+            return true;
+        }
+        if (key < root.data) {
+            return searchVal(root.left, key);
+        }
+        return searchVal(root.right, key);
+
+    }
+
     public static void inorderTraversal(Node root) {
         if (root == null) {
             return;
@@ -45,5 +59,12 @@ public class BST {
         }
 
         inorderTraversal(root);
+        System.out.println();
+        int key = -10;
+        if (searchVal(root, key)) {
+            System.out.println(key + " found");
+        } else {
+            System.out.println(key + " not found");
+        }
     }
 }
