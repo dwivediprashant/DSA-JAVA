@@ -50,6 +50,25 @@ public class BST {
         inorderTraversal(root.right);
     }
 
+    public static void printRange(Node root, int n1, int n2) {
+        if (root == null) {
+            return;
+        }
+        if (root.data <= n2 && root.data >= n1) {
+            printRange(root.left, n1, n2);
+            System.out.println(root.data);
+            printRange(root.right, n1, n2);
+        }
+
+        if (root.data < n1) {
+            printRange(root.right, n1, n2);
+        }
+
+        if (root.data > n2) {
+            printRange(root.left, n1, n2);
+        }
+    }
+
     public static void main(String[] args) {
         int[] values = { 6, 5, 8, 9, 12, 10, 17 };
 
@@ -66,5 +85,10 @@ public class BST {
         } else {
             System.out.println(key + " not found");
         }
+
+        // System.out.println(root.data);
+        System.out.println("Range");
+        printRange(root, 8, 20);
+
     }
 }
