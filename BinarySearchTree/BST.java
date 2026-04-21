@@ -69,6 +69,43 @@ public class BST {
         }
     }
 
+    public static int getMax(Node root, int max) {
+        if (root == null) {
+            return max;
+        }
+        max = (int) Math.max(max, root.data);
+        int leftRes = getMax(root.left, max);
+        int rightRes = getMax(root.right, max);
+
+        return leftRes > rightRes ? leftRes : rightRes;
+    }
+
+    public static int getMin(Node root, int min) {
+        if (root == null) {
+            return min;
+        }
+        min = (int) Math.min(min, root.data);
+        int leftRes = getMin(root.left, min);
+        int rightRes = getMin(root.right, min);
+
+        return leftRes < rightRes ? leftRes : rightRes;
+    }
+
+    public static boolean validateBST(Node root) {
+        if (root == null) {
+            return true;
+        }
+
+        int leftMax = getMax(root.left, Integer.MIN_VALUE);
+        int rightMin = getMin(root.right, Integer.MAX_VALUE);
+
+        if (leftMax > root.data || rightMin < root.data) {
+            return false;
+        }
+
+        return validateBST(root.left) && validateBST(root.right);
+    }
+
     public static void main(String[] args) {
         int[] values = { 6, 5, 8, 9, 12, 10, 17 };
 
@@ -89,6 +126,21 @@ public class BST {
         // System.out.println(root.data);
         System.out.println("Range");
         printRange(root, 8, 20);
+
+        Node head = new Node(100);
+        head.left = new Node(50);
+        head.right = new Node(110);
+        head.left.left = new Node(30);
+        head.left.right = new Node(90);
+        head.right.left = new Node(105);
+        head.right.right = new Node(150);
+        head.left.right.left = new Node(60);
+        head.left.right.right = new Node(95);
+        head.right.left.right = new Node(107);
+        head.right.right.right = new Node(200);
+        head.right.right.right.left = new Node(170);
+
+        System.out.println("Is valid bst : " + validateBST(head));
 
     }
 }
