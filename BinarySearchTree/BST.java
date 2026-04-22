@@ -106,6 +106,20 @@ public class BST {
         return validateBST(root.left) && validateBST(root.right);
     }
 
+    public static Node mirrorBST(Node root) {
+        if (root == null) {
+            return null;// or root
+        }
+
+        Node leftRes = mirrorBST(root.left);
+        Node rightRes = mirrorBST(root.right);
+
+        root.left = rightRes;
+        root.right = leftRes;
+
+        return root;
+    }
+
     public static void main(String[] args) {
         int[] values = { 6, 5, 8, 9, 12, 10, 17 };
 
@@ -141,6 +155,11 @@ public class BST {
         head.right.right.right.left = new Node(170);
 
         System.out.println("Is valid bst : " + validateBST(head));
+        inorderTraversal(head);
+        System.out.println();
+        head = mirrorBST(head);
+
+        inorderTraversal(head);
 
     }
 }
