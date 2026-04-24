@@ -120,6 +120,25 @@ public class BST {
         return root;
     }
 
+    public static Node balancedBST(int st, int end, int[] sortedArr) {
+
+        if (st > end) {
+            return null;
+        }
+
+        int mid = end + (st - end) / 2;
+        Node root = new Node(sortedArr[mid]);
+
+        Node leftRes = balancedBST(st, mid - 1, sortedArr);
+        Node rightRes = balancedBST(mid + 1, end, sortedArr);
+
+        root.left = leftRes;
+        root.right = rightRes;
+
+        return root;
+
+    }
+
     public static void main(String[] args) {
         int[] values = { 6, 5, 8, 9, 12, 10, 17 };
 
@@ -160,6 +179,11 @@ public class BST {
         head = mirrorBST(head);
 
         inorderTraversal(head);
+
+        int[] sortedArr = { 3, 5, 7, 10, 11, 15, 20, 40, 45 };
+        Node head2 = balancedBST(0, sortedArr.length - 1, sortedArr);
+        System.out.println("Balanced BST");
+        inorderTraversal(head2);
 
     }
 }
