@@ -115,6 +115,36 @@ public class Intersection {
         return ans;
     }
 
+    public static int[] getIntersection5(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+
+        int ptr1 = 0, ptr2 = 0;
+
+        HashSet<Integer> res = new HashSet<>();
+
+        while (ptr1 < nums1.length && ptr2 < nums2.length) {
+            if (nums1[ptr1] == nums2[ptr2]) {
+                res.add(nums1[ptr1]);
+                ptr1++;
+            } else if (nums1[ptr1] < nums2[ptr2]) {
+                ptr1++;
+            } else {
+                ptr2++;
+            }
+        }
+
+        int n = res.size();
+
+        int[] ans = new int[n];
+        int i = 0;
+        for (int x : res) {
+            ans[i++] = x;
+        }
+
+        return ans;
+    }
+
     public static void printArray(int[] arr) {
         for (int x : arr) {
             System.out.print(x + " ");
@@ -141,6 +171,12 @@ public class Intersection {
         // 4th way using hashset time : O(n) space : O(n) for storing result
         int[] ans4 = getIntersection4(nums1, nums2);
         printArray(ans4);
+
+        System.out.println();
+        // 5th way using 2 pointer + sorting; time : O(n) space : O(n) for storing
+        // result
+        int[] ans5 = getIntersection4(nums1, nums2);
+        printArray(ans5);
 
     }
 }
