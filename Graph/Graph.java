@@ -37,6 +37,39 @@ public class Graph {
         }
     }
 
+    public static void dfs(ArrayList<Edge>[] graph, int src) {
+        Stack<Integer> s = new Stack<>();
+        boolean[] visited = new boolean[graph.length];
+
+        int srcVertex = src;
+        s.push(srcVertex);
+
+        while (!s.isEmpty()) {
+            int top = s.pop();
+
+            if (!visited[top]) {
+                System.out.println(top);
+                visited[top] = true;
+                for (int i = 0; i < graph[top].size(); i++) {
+                    int neighbor = graph[top].get(i).dest;
+                    s.push(neighbor);
+                }
+            }
+        }
+    }
+
+    public static void dfsRecursion(ArrayList<Edge>[] graph, int src, boolean[] visited) {
+
+        System.out.println(src);
+        visited[src] = true;
+        for (int i = 0; i < graph[src].size(); i++) {
+            int neighbor = graph[src].get(i).dest;
+            if (!visited[neighbor]) {
+                dfsRecursion(graph, neighbor, visited);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         int V = 5;// total vertex in graph
 
@@ -80,13 +113,20 @@ public class Graph {
 
         // print neighbours of given vertex
         int getNeighFor = 3;
+        System.out.println("=========Neighbor of " + getNeighFor + "================");
         for (int i = 0; i < graph[getNeighFor].size(); i++) {
             Edge e = graph[getNeighFor].get(i);
             System.out.println(e.dest);
         }
 
         // BFS traversal
+        System.out.println("==============BFS================");
         bfs(graph, 0);// O(V+E)
+        // DFS
+        System.out.println("============DFS================");
+        dfs(graph, 0);
+        System.out.println("===========DFS recursion==========");
+        dfsRecursion(graph, 0, new boolean[graph.length]);
 
     }
 }
