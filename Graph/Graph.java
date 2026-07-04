@@ -70,6 +70,24 @@ public class Graph {
         }
     }
 
+    public static boolean hasPath(ArrayList<Edge>[] graph, int src, int dest, boolean[] visited) {
+        if (src == dest) {
+            return true;
+        }
+        visited[src] = true;
+
+        for (int i = 0; i < graph[src].size(); i++) {
+            Edge e = graph[src].get(i);
+            if (!visited[e.dest]) {
+                if (hasPath(graph, e.dest, dest, visited)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+
+    }
+
     public static void main(String[] args) {
         int V = 5;// total vertex in graph
 
@@ -127,6 +145,9 @@ public class Graph {
         dfs(graph, 0);
         System.out.println("===========DFS recursion==========");
         dfsRecursion(graph, 0, new boolean[graph.length]);
+
+        System.out.println("=====HAS PATH problem #leetcode 1971==========");
+        System.out.println(hasPath(graph, 0, 4, new boolean[V]));
 
     }
 }
