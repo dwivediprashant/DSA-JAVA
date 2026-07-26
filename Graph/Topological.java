@@ -1,40 +1,29 @@
 import java.util.*;
-import java.util.Stack;
 
-public class CycleInDirected {
-    public static boolean hasCycleUtil(ArrayList<Integer>[] graph, int curr, boolean[] vis, boolean[] stack) {
-
+public class Topological {
+    public static void topSortUtil(ArrayList<Integer>[] graph, int curr, boolean[] vis, Stack<Integer> st) {
         vis[curr] = true;
-        stack[curr] = true;
+
         for (int i = 0; i < graph[curr].size(); i++) {
             int neighbor = graph[curr].get(i);
-            if (stack[neighbor]) {
-                return true;
-            }
             if (!vis[neighbor]) {
-                if (hasCycleUtil(graph, neighbor, vis, stack)) {
-                    return true;
-                }
+                topSortUtil(graph, neighbor, vis, st);
             }
         }
-        stack[curr] = false;
-        return false;
+        st.push(curr);
     }
 
-    public static boolean hasCycle(ArrayList<Integer>[] graph) {
-
+    public static void topSort(ArrayList<Integer>[] graph) {
         boolean[] vis = new boolean[graph.length];
-        boolean[] stack = new boolean[graph.length];
-
+        Stack<Integer> st = new Stack<>();
         for (int i = 0; i < graph.length; i++) {
             if (!vis[i]) {
-                if (hasCycleUtil(graph, i, vis, stack)) {
-                    return true;
-                }
+                topSortUtil(graph, i, vis, st);
             }
         }
-
-        return false;
+        while (!st.isEmpty()) {
+            System.out.println(st.pop());
+        }
     }
 
     public static void main(String[] args) {
@@ -51,7 +40,6 @@ public class CycleInDirected {
             int v = sc.nextInt();
             graph[u].add(v);
         }
-
-        System.out.println(hasCycle(graph));
+        topSort(graph);
     }
 }
